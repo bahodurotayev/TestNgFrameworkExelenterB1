@@ -32,9 +32,10 @@ import org.testng.annotations.Test;
  * Do it using both local data & from Excel.
  */
 public class LoginTestNegative extends BaseClass {
+
     // Retrieve data using both local DataProvider OR from Excel by changing the name for dataProvider attribute.
     @Test(dataProvider = "negativeLoginExcel")
-    public void userLogin(String username, String password,String expectedErrorMessage ){
+    public void userLogin(String username, String password, String expectedErrorMessage ){
         loginPage.loginToWebsite2(username, password);
         Assert.assertEquals(loginPage.loginErrorMessage.getText(), expectedErrorMessage, "Error message is incorrect");
     }
@@ -42,7 +43,7 @@ public class LoginTestNegative extends BaseClass {
     @DataProvider(name = "negativeLoginExcel")
     public Object[][] loginData(){
 
-        return ExcelUtility.readFromExcel(Constants.TEST_DATA_EXCEL,"NegativeLoginTests");
+        return ExcelUtility.readFromExcel(Constants.TEST_DATA_EXCEL,"Sheet4");
     }
 
     @DataProvider
@@ -58,5 +59,4 @@ public class LoginTestNegative extends BaseClass {
                 {"", "", "Username cannot be empty"}                       // empty          empty
         };
     }
-
 }
