@@ -5,6 +5,7 @@ import com.exelenter.utils.ConfigsReader;
 import com.exelenter.utils.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -21,10 +22,14 @@ public class BaseClass extends CommonMethods {
     @BeforeMethod(alwaysRun = true)
     public static void setUp() {
         ConfigsReader.loadProperties(Constants.CONFIGURATION_FILEPATH); // Replaced hard-coded filePath with Constants
+
         switch (ConfigsReader.getProperties("browser").toLowerCase()) {
             case "chrome" -> {
                 System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
-                driver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                //options.addArguments("--headless");
+                options.addArguments("--disable-logging");
+                driver = new ChromeDriver(options);
             }
             case "edge" -> {
                 System.setProperty("webdriver.edge.verboseLogging", Constants.EDGE_DRIVER_PATH);

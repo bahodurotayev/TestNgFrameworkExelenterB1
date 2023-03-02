@@ -25,6 +25,7 @@ public class LoginTest extends BaseClass {
         sendText(loginPage.username, ConfigsReader.getProperties("username"));    // Valid Username
         sendText(loginPage.password, invalidPassword);                                // Invalid Password
         click(loginPage.loginBtn);
+        Assert.fail();
         Assert.assertEquals(loginPage.loginErrorMessage.getText(), expectedErrorMessage, "Error message is incorrect");
     }
 

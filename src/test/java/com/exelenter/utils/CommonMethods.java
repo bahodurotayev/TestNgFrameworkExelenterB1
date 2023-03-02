@@ -288,7 +288,8 @@ public class CommonMethods extends PageInitializer {
      * Method will take a screenshot when called. Extension defined as .png (You can change to .jpeg from CommonMethods when needed)
      * @param fileName String as screenshot name
      */
-    public static void takeScreenshot(String fileName) {
+    public static String takeScreenshot(String fileName) {
+
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
         try {
@@ -297,7 +298,18 @@ public class CommonMethods extends PageInitializer {
             e.printStackTrace();
             System.out.println("Screenshot is not taken");
         }
+        return fileName;
     }
+
+ /*   public static String takeScreenshot(WebElement element, String fileName) {
+        File sourceFile = element.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(sourceFile, new File("screenshots/" + fileName + "_" + getTimeStamp() + ".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fileName;
+    }*/
 
     public static String randomStrongPassWord(){
         String passWord = "";
