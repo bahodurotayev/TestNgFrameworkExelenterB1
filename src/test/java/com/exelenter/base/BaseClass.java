@@ -27,7 +27,7 @@ public class BaseClass extends CommonMethods {
             case "chrome" -> {
                 System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
                 ChromeOptions options = new ChromeOptions();
-                //options.addArguments("--headless");
+                options.addArguments("--headless");
                 options.addArguments("--disable-logging");
                 driver = new ChromeDriver(options);
             }

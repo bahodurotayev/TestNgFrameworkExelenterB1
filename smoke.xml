@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <listeners>
         <listener class-name="com.exelenter.base.Listener"/></listeners>
-    <test name="Regression Test">
+    <test name="Smoke Test">
         <groups>
             <run>
             <include name="smoke"/>

@@ -10,10 +10,16 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.concurrent.TimeUnit;
+
 public class Listener implements ITestListener {
     ExtentReports  reports = new ExtentReports();
     ExtentSparkReporter sparkReporter = new ExtentSparkReporter(Constants.REPORT_FILEPATH);
     ExtentTest test;
+    Instant startTime;
+    Instant finishTime;
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -57,11 +63,32 @@ public class Listener implements ITestListener {
         sparkReporter.config().setReportName("Exelenter Project Test Report");
 
         reports.attachReporter(sparkReporter);
+
+        startTime = Instant.now();
+
     }
 
     @Override
     public void onFinish(ITestContext context) {
         System.out.println("\n************************************\n=== Test Finished ===" + context.getName() + " | " +context.getEndDate());
         reports.flush();
+
+        finishTime = Instant.now();
+        Duration totalTime = Duration.between(startTime, finishTime);
+
+        /*long milliSeconds =totalTime.toMillis();
+        System.out.println("milliSeconds = " + milliSeconds);*/
+
+        long toHour = totalTime.toHours();
+
+        long toMinute = totalTime.toMinutes();
+
+        long toSecond = totalTime.toSeconds();
+
+        System.out.println("Total test completion");
+        System.out.println("toHour = " + toHour);
+        System.out.println("toMinute = " + toMinute);
+        System.out.println("toSecond = " + toSecond);
+
     }
 }

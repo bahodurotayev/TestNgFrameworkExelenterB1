@@ -4,7 +4,7 @@
   <listeners>
     <listener class-name="com.exelenter.base.Listener"/>
   </listeners>
-  <test thread-count="5" name="Regression Test(failed)">
+  <test thread-count="5" name="Smoke Test(failed)">
     <groups>
       <run>
         <include name="smoke"/>
@@ -19,5 +19,5 @@
         </methods>
       </class> <!-- com.exelenter.testcases.LoginTest -->
     </classes>
-  </test> <!-- Regression Test(failed) -->
+  </test> <!-- Smoke Test(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->
