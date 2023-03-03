@@ -25,7 +25,7 @@ import static org.testng.Assert.assertEquals;
  */
 public class AddEmployeeFromExcel extends BaseClass {
 
-    @Test(dataProvider = "readFromExcel", groups = {"smoke","regression", "excel"}, enabled = false)
+    @Test(dataProvider = "addEmployees", groups = {"smoke","regression", "excel"})
     public void addEmployeeTest(String firstName, String lastName, String userName, String password) {
         loginPage.loginToWebsite("username", "password");
         wait(1);

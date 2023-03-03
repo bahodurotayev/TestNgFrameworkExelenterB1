@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Excel Test Suite">
+   <listeners>
+       <listener class-name="com.exelenter.base.Listener"/>
+   </listeners>
+    <test name="Excel test Cases">
+        <groups>
+            <run>
+                <include name="excel"/>
+            </run>
+        </groups>
+        <packages><package name="com.exelenter.testcases"></package></packages>
+    </test>
+</suite>

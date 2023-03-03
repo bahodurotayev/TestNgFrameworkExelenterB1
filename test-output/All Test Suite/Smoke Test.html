@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Smoke Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Mar 02 13:37:34 EST 2023</td>
+<td>Started on:</td><td>Fri Mar 03 05:31:38 EST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>21 seconds (21477 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (129 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>smoke </td>
 </tr><tr>
@@ -76,24 +76,25 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.exelenter.testcases.LoginTest.validUserInvalidPassword()'><b>validUserInvalidPassword</b><br>Test class: com.exelenter.testcases.LoginTest</td>
-<td><div><pre>java.lang.AssertionError: null
-	at com.exelenter.testcases.LoginTest.validUserInvalidPassword(LoginTest.java:28)
+<td title='com.exelenter.testcases.AddEmployeeFromExcel.addEmployeeTest()'><b>addEmployeeTest</b><br>Test class: com.exelenter.testcases.AddEmployeeFromExcel</td>
+<td><div><pre>java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Workbook.getSheet(String)&quot; because &quot;com.exelenter.utils.ExcelUtility.workbook&quot; is null
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1756988236", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1756988236'><pre>java.lang.AssertionError: null
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.fail(Assert.java:115)
-	at com.exelenter.testcases.LoginTest.validUserInvalidPassword(LoginTest.java:28)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Workbook.getSheet(String)&quot; because &quot;com.exelenter.utils.ExcelUtility.workbook&quot; is null
+	at com.exelenter.utils.ExcelUtility.getSheet(ExcelUtility.java:27)
+	at com.exelenter.utils.ExcelUtility.readFromExcel(ExcelUtility.java:51)
+	at com.exelenter.testcases.AddEmployeeFromExcel.getDataFromExcel(AddEmployeeFromExcel.java:90)
+	... 24 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1293203138", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1293203138'><pre>java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Workbook.getSheet(String)&quot; because &quot;com.exelenter.utils.ExcelUtility.workbook&quot; is null
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:57)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:157)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:803)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:728)
+	at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
+	at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:924)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -112,33 +113,19 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.run(TestNG.java:1067)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Workbook.getSheet(String)&quot; because &quot;com.exelenter.utils.ExcelUtility.workbook&quot; is null
+	at com.exelenter.utils.ExcelUtility.getSheet(ExcelUtility.java:27)
+	at com.exelenter.utils.ExcelUtility.readFromExcel(ExcelUtility.java:51)
+	at com.exelenter.testcases.AddEmployeeFromExcel.getDataFromExcel(AddEmployeeFromExcel.java:90)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:53)
+	... 24 more
 </pre></div></td>
 <td>0</td>
-<td>com.exelenter.testcases.LoginTest@22fcf7ab</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.exelenter.testcases.AddEmployeeTest.addEmployeeTest()'><b>addEmployeeTest</b><br>Test class: com.exelenter.testcases.AddEmployeeTest</td>
-<td></td>
-<td>3</td>
-<td>com.exelenter.testcases.AddEmployeeTest@587e5365</td></tr>
-<tr>
-<td title='com.exelenter.testcases.LoginTest.validUserEmptyPassword()'><b>validUserEmptyPassword</b><br>Test class: com.exelenter.testcases.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>com.exelenter.testcases.LoginTest@22fcf7ab</td></tr>
-<tr>
-<td title='com.exelenter.testcases.LoginTest.validAdminLogin()'><b>validAdminLogin</b><br>Test class: com.exelenter.testcases.LoginTest</td>
-<td></td>
-<td>2</td>
-<td>com.exelenter.testcases.LoginTest@22fcf7ab</td></tr>
+<td>com.exelenter.testcases.AddEmployeeFromExcel@752325ad</td></tr>
 </table><p>
 </body>
 </html>
