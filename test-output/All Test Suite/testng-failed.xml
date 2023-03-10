@@ -11,6 +11,13 @@
       </run>
     </groups>
     <classes>
+      <class name="com.exelenter.testcases.AddEmployeeFromExcel">
+        <methods>
+          <include name="addEmployeeTest" invocation-numbers="0 1 2 3 4"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.exelenter.testcases.AddEmployeeFromExcel -->
       <class name="com.exelenter.testcases.LoginTest">
         <methods>
           <include name="tearDown"/>
